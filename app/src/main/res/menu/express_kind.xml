@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/daily_item"
+        android:title="日用品" />
+    <item
+        android:id="@+id/food_item"
+        android:title="食品" />
+
+    <item
+        android:id="@+id/file_item"
+        android:title="文件" />
+
+    <item
+        android:id="@+id/clothes_item"
+        android:title="衣物" />
+    <item
+        android:id="@+id/digital_item"
+        android:title="数码产品" />
+    <item
+        android:id="@+id/others_item"
+        android:title="其他" />
+
+</menu>

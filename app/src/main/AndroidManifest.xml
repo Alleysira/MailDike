@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.trytolearn">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="北航邮堤"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoTitle_FullScreen"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".AdminBottomBarActivity"></activity>
+        <activity android:name=".UserBottomBarActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".TestbugActivity" />
+        <activity android:name=".TimeActivity" />
+        <activity android:name=".DateActivity" />
+        <activity android:name=".SenderActivity" />
+        <activity android:name=".SenderFormActivity" />
+        <activity android:name=".ReceiverFormActivity" />
+        <activity android:name=".SelectSendorReceiveActivity" />
+        <activity android:name=".PersonalinfoActivity" />
+        <activity android:name=".WarehouseActivity" />
+        <activity android:name=".TrytocommunicateActivity" />
+        <activity android:name=".TestDescriptionActivity" />
+        <activity android:name=".RealMyScanActivity" />
+        <activity android:name=".UploadLocationActivity" />
+        <activity android:name=".NouseRegisterActivity" />
+        <activity android:name=".FunctionActivity">
+            <intent-filter>
+                <action android:name="com.example.trytolearn.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FirstActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="K3foG4eaKrLnRWRnALMnQFNuziGt1GVR" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+    </application>
+
+</manifest>

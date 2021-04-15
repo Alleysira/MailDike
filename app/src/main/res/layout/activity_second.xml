@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FunctionActivity">
+    <!--    <WebView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:id="@+id/MyWebview">-->
+
+    <!--    </WebView>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></TextView>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:text="Scan"
+        android:layout_gravity="center"></Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></TextView>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:layout_gravity="center"
+        android:layout_width="200dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></TextView>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:id="@+id/responseText"></TextView>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Test_solve"
+        android:text="decription"
+        android:gravity="center"
+        android:layout_gravity="center"></Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></TextView>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Connect"
+        android:id="@+id/Connect_button"></Button>
+</LinearLayout>

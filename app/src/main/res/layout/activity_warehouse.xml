@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WarehouseActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"></TextView>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Putin"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="扫码入库"></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"></TextView>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Output"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="扫码出库"></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"></TextView>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Search_personalinfo"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="查询个人信息"></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"></TextView>
+    <!--    <Button-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/Search_postinfo"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="查询仓库信息">-->
+    <!--    </Button>-->
+
+</LinearLayout>

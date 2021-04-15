@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalinfoActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"></TextView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="个人信息"
+        android:textSize="30dp"
+        android:textColor="@color/light_blue"></TextView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"></TextView>
+
+    <ImageView
+        android:id="@+id/protrit"
+        android:layout_width="133dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:src="@drawable/portrait"></ImageView>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="员工头像"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"></TextView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="员工姓名：张三"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"
+        android:id="@+id/name"></TextView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="工号：112668"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"
+        android:id="@+id/jobnumber"></TextView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="手机号码：17793709599"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"
+        android:id="@+id/tel"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="工作站点：北京南法信中转场"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"
+        android:id="@+id/mail_station"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/light_blue"
+        android:id="@+id/test_read"></TextView>
+
+</LinearLayout>
