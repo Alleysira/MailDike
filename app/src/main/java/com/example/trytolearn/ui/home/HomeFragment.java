@@ -14,11 +14,12 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.trytolearn.R;
 import com.example.trytolearn.ReceiverFormActivity;
 import com.example.trytolearn.SenderFormActivity;
+import com.example.trytolearn.Time.TimeRangePickerDialog;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
+    TextView tvPushTime;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +55,25 @@ public class HomeFragment extends Fragment {
                 startActivity(b);
             }
         });
+        TextView tvPushTime = getActivity().findViewById(R.id.tvPushTime);
+        getActivity().findViewById(R.id.setTimeLayout).setOnClickListener(view -> {
+            TimeRangePickerDialog dialog =
+                    new TimeRangePickerDialog(getActivity(), tvPushTime.getText().toString(), new TimeRangePickerDialog.ConfirmAction() {
+                        @Override
+                        public void onLeftClick() {
+                        }
+
+                        @Override
+                        public void onRightClick(String startAndEndTime) {
+                            tvPushTime.setText(startAndEndTime);
+                        }
+                    });
+
+            dialog.show();
+
+        });
+
+
     }
 
 

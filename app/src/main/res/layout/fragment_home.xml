@@ -191,18 +191,38 @@
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="选取时间:">
+                <RelativeLayout
+                    android:id="@+id/setTimeLayout"
+                    android:layout_width="300dp"
+                    android:layout_height="54dp"
+                    android:background="@color/white"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="接受推送时间"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
 
-                <EditText
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"></EditText>
+                    <TextView
+                        android:id="@+id/tvPushTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="10dp"
+                        android:text="07:00 - 09:00"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
             </LinearLayout>
 
             <Button
