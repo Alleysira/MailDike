@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".admin_ui.ui.notifications.NotificationsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +14,7 @@
         android:padding="20dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"></TextView>
-
-        <TextView
+            android:layout_marginTop="15dp"
             android:layout_width="300dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
@@ -25,12 +22,6 @@
             android:text="个人信息"
             android:textSize="30dp"
             android:textColor="@color/white"></TextView>
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"></TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="用户姓名:"
+                        android:text="员工姓名:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -95,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="用户账号:"
+                        android:text="员工工号:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -127,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="用户电话:"
+                        android:text="员工电话:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -160,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="用户地址:"
+                        android:text="工作站点:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -172,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="北京航空航天大学"
+                        android:text="北京南法信中转场"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
