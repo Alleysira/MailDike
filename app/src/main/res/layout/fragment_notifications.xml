@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_ui.ui.notifications.NotificationsFragment">
+    tools:context=".ui.ui.notifications.NotificationsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="员工姓名:"
+                        android:text="用户姓名:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="员工工号:"
+                        android:text="用户账号:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="员工电话:"
+                        android:text="用户电话:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -151,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="工作站点:"
+                        android:text="用户地址:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -163,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="北京南法信中转场"
+                        android:text="北京航空航天大学"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
