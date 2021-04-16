@@ -33,7 +33,9 @@ class FirstActivity : AppCompatActivity() {
                     Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
 //                    val intent=Intent(this, WarehouseActivity::class.java)
                     val intent = Intent(this, AdminBottomBarActivity::class.java)
+//                    val intent = Intent(this, TimePickerActivity::class.java)
                     startActivity(intent)
+
                 } else {
                     Toast.makeText(this, "登录失败，请选择身份！", Toast.LENGTH_SHORT).show()
                 }
