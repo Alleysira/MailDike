@@ -5,22 +5,26 @@
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="5dp"
+    android:background="@drawable/bg_corner_white"
     android:theme="@style/AppTimePicker"
     android:paddingTop="15dp">
 
     <TextView
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="设置取件时间"
-        android:textColor="@android:color/black"
         android:textSize="16dp"
         android:textStyle="bold" />
 
     <RelativeLayout
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg_corner_white"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="0dp">
 
         <TimePicker
             android:id="@+id/timePickerStart"

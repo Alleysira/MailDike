@@ -207,7 +207,6 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="接受推送时间"
-                        android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
                     <TextView
@@ -218,7 +217,6 @@
                         android:layout_centerVertical="true"
                         android:drawablePadding="10dp"
                         android:text="07:00 - 09:00"
-                        android:textColor="@android:color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
