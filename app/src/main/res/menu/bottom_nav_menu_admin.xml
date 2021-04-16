@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/in"
         android:title="扫码入库" />
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/send"
         android:title="扫码出库" />
 
     <item
         android:id="@+id/test"
         android:title="后台查询"
-        android:icon="@drawable/lock" />
+        android:icon="@drawable/wareho" />
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/personinf"
         android:title="个人信息" />
 
 </menu>

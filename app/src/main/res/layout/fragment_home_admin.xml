@@ -43,7 +43,7 @@
                 android:text="下载密文"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="#96ffffff"
+                android:textColor="#fcfcfc"
                 android:textSize="16dp" />
 
             <Button
@@ -56,11 +56,11 @@
                 android:text="解密下一站"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="#96ffffff"
+                android:textColor="#fcfcfc"
                 android:textSize="16dp" />
 
             <Button
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_width="180dp"
@@ -69,7 +69,7 @@
                 android:text="拨打电话"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="#96ffffff"
+                android:textColor="#fcfcfc"
                 android:textSize="16dp" />
 
             <Button
@@ -83,7 +83,7 @@
                 android:text="扫码"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="#96ffffff"
+                android:textColor="#fcfcfc"
                 android:textSize="16dp" />
         </LinearLayout>
 

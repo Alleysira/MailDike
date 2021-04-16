@@ -1,5 +1,7 @@
 package com.example.trytolearn;
 
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ public class AdminBottomBarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bottom_bar_admin);
 
         BottomNavigationView navView = findViewById(R.id.nav_view_admin);
+        navView.setItemIconTintList(null);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 //        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -24,7 +27,10 @@ public class AdminBottomBarActivity extends AppCompatActivity {
 //                .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);
         NavigationUI.setupWithNavController(navView, navController);
-
+        //change color
+//        Resources resource = getResources();
+//        ColorStateList csl = resource.getColorStateList(R.color.lightblue);
+//        navView.setItemTextColor(csl);
     }
 
 

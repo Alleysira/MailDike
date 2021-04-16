@@ -138,7 +138,7 @@
                 android:text="登录"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="#96ffffff"
+                android:textColor="#fcfcfc"
                 android:textSize="16dp" />
 
         </LinearLayout>
