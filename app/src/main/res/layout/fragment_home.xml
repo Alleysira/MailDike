@@ -30,13 +30,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/bg_corner_white">
+            android:background="@drawable/bg_corner_white"
+            android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -49,45 +49,45 @@
                     android:src="@drawable/lock" />
 
                 <TextView
+                    android:id="@+id/please_select"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#999"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="60dp"
-                    android:drawablePadding="12px"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="12dp"
-                    android:hint="请选取"
-                    android:id="@+id/please_select"
-                    android:maxLines="1"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="12px"
+                    android:hint="请选取"
+                    android:maxLines="1"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#999"
                     android:textSize="16sp"></TextView>
 
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#999"
-                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="60dp"
+                    android:layout_marginTop="50dp"
                     android:drawablePadding="12px"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="12dp"
                     android:hint="寄件人信息"
                     android:maxLines="1"
-                    android:layout_gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#999"
                     android:textSize="16sp"></TextView>
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -100,55 +100,55 @@
                     android:src="@drawable/lock" />
 
                 <TextView
+                    android:id="@+id/select_receiver"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#999"
-                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="60dp"
+                    android:layout_marginTop="5dp"
                     android:drawablePadding="12px"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="12dp"
                     android:hint="请选取"
                     android:maxLines="1"
-                    android:layout_gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:id="@+id/select_receiver"></TextView>
+                    android:textColorHint="#999"
+                    android:textSize="16sp"></TextView>
 
 
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#999"
-                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="60dp"
+                    android:layout_marginTop="50dp"
                     android:drawablePadding="12px"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="12dp"
                     android:hint="收件人信息"
                     android:maxLines="1"
-                    android:layout_gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
+                    android:textColorHint="#999"
                     android:textSize="16sp"></TextView>
             </RelativeLayout>
 
             <LinearLayout
 
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
                 android:padding="10dp">
 
                 <LinearLayout
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -159,11 +159,11 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/kind"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:hint="日用品"
                         android:gravity="center"
-                        android:id="@+id/kind"></TextView>
+                        android:hint="日用品"></TextView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -177,11 +177,11 @@
                         android:text="物品重量："></TextView>
 
                     <EditText
+                        android:id="@+id/weight"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:hint="/公斤"
                         android:gravity="center"
-                        android:id="@+id/weight"></EditText>
+                        android:hint="/公斤"></EditText>
                 </LinearLayout>
             </LinearLayout>
 
@@ -206,7 +206,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="接受推送时间"
+                        android:text="取件时间"
                         android:textSize="14sp" />
 
                     <TextView
@@ -216,7 +216,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:drawablePadding="10dp"
-                        android:text="07:00 - 09:00"
+                        android:text="10:00 - 12:00"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -224,17 +224,17 @@
             </LinearLayout>
 
             <Button
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/buttonshapewhitebg"
+                android:gravity="center"
                 android:text="立即下单"
                 android:textAllCaps="false"
-                android:textStyle="bold"
                 android:textColor="#fcfcfc"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 
