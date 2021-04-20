@@ -6,9 +6,16 @@
     tools:context=".RealMyScanActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="10dp"
-        android:layout_height="200dp"></TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ImageView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg_3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,6 +30,9 @@
         android:id="@+id/test_for_download"
         android:layout_gravity="center"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fcfcfc"
+        android:background="@drawable/buttonshapewhitebg"
         android:text="下载密文"></Button>
 
     <TextView
@@ -35,14 +45,16 @@
         android:id="@+id/solve"
         android:layout_gravity="center"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fcfcfc"
+        android:background="@drawable/buttonshapewhitebg"
         android:text="解密"></Button>
-
-
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/message_view"
         android:gravity="center"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:hint="下一站地址"></TextView>
 
@@ -52,6 +64,10 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="拨打电话"
+        android:textStyle="bold"
+        android:textColor="#fcfcfc"
+        android:background="@drawable/buttonshapewhitebg"
+
         android:id="@+id/call"></Button>
 
 
