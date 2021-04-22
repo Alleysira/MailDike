@@ -20,11 +20,6 @@ import com.yxing.ScanCodeActivity;
 import com.yxing.ScanCodeConfig;
 import com.yxing.def.ScanStyle;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import cn.edu.buaa.crypto.algebra.serparams.PairingCipherSerParameter;
 import cn.edu.buaa.crypto.algebra.serparams.PairingKeySerParameter;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -42,6 +37,7 @@ public class RealMyScanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_scan);
+
         tvCode = findViewById(R.id.tv_code);
 
         startScan(ScanStyle.WECHAT, ScanCodeActivity.class);
@@ -97,7 +93,7 @@ public class RealMyScanActivity extends AppCompatActivity {
 
     }
 
-    private void startScan(int style, Class mClass) {
+    public void startScan(int style, Class mClass) {
         new RxPermissions(this)
                 .requestEachCombined(Manifest.permission.CAMERA)
                 .subscribe(new Observer<Permission>() {
@@ -137,7 +133,6 @@ public class RealMyScanActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == ScanCodeConfig.QUESTCODE && data != null) {
             Bundle extras = data.getExtras();
             if (extras != null) {
-
                 Button tell = findViewById(R.id.call);
                 tell.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -180,21 +175,21 @@ public class RealMyScanActivity extends AppCompatActivity {
                     }
                 });
 
-                File file = new File("/data/data/com.example.trytolearn/files/orderid");
-                FileWriter fw = null;
-                try {
-                    fw = new FileWriter(file);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                BufferedWriter bw = new BufferedWriter(fw);
-                try {
-                    bw.write(code + '\n');
-                    bw.close();
-                    fw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                File file = new File("/data/data/com.example.trytolearn/files/orderid");
+//                FileWriter fw = null;
+//                try {
+//                    fw = new FileWriter(file);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                BufferedWriter bw = new BufferedWriter(fw);
+//                try {
+//                    bw.write(code + '\n');
+//                    bw.close();
+//                    fw.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         }
     }

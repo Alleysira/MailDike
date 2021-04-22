@@ -73,18 +73,18 @@
                 android:textSize="16dp" />
 
             <Button
-                android:layout_marginTop="200dp"
-                android:layout_gravity="center"
-                android:gravity="center"
                 android:id="@+id/scan_incode"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="200dp"
                 android:background="@drawable/button_circle"
+                android:gravity="center"
                 android:text="扫码"
                 android:textAllCaps="false"
-                android:textStyle="bold"
                 android:textColor="#fcfcfc"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>

@@ -83,6 +83,7 @@
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 android:textColor="#fcfcfc"
+                android:id="@+id/out_scan"
                 android:textSize="16dp" />
         </LinearLayout>
 
