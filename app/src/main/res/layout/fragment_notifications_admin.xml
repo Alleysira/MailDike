@@ -14,7 +14,7 @@
         android:padding="20dp">
 
         <TextView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_width="300dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
@@ -26,7 +26,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/bg_corner_white"
             android:orientation="vertical">
 
@@ -34,15 +34,12 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_corner_white"
                 android:elevation="3dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"></TextView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -66,7 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="马杰"
+                        android:text="竹马"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -175,14 +172,12 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"></TextView>
+
 
         <ImageView
-            android:layout_marginTop="-520dp"
+            android:layout_marginTop="-430dp"
             android:id="@+id/protrit"
-            android:layout_width="133dp"
+            android:layout_width="100dp"
             android:layout_height="142dp"
             android:layout_gravity="center"
             android:gravity="center"

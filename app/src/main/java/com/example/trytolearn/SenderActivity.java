@@ -97,6 +97,8 @@ public class SenderActivity extends AppCompatActivity {
                                 + my_receiver.getString("rPhone", "")
                                 + " "
                                 + my_receiver.getString("rAddress", "");
+
+
                 TextView show = findViewById(R.id.show_personal_info);
                 TextView show_cipher = findViewById(R.id.show_cipher);
                 show.setText(message);
@@ -117,7 +119,6 @@ public class SenderActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
