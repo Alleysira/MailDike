@@ -56,6 +56,7 @@ public class ReceiverFormActivity extends AppCompatActivity {
                 Intent a = new Intent();
                 a.setClass(ReceiverFormActivity.this, UserBottomBarActivity.class);
                 startActivity(a);
+                ReceiverFormActivity.this.finish();
             }
         });
 

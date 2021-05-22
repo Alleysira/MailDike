@@ -13,13 +13,14 @@ import java.io.BufferedWriter
 import java.io.File
 import java.io.IOException
 import java.io.OutputStreamWriter
+import kotlin.system.exitProcess
 
 class FirstActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.first_layout)
-        second_edittext.setTransformationMethod(PasswordTransformationMethod.getInstance())//密码隐藏
+        second_edittext.transformationMethod = PasswordTransformationMethod.getInstance()//密码隐藏
         second_edittext.setSelection(second_edittext.text.length)
 
         val button1: Button = findViewById(R.id.button1)// 登录
@@ -28,6 +29,8 @@ class FirstActivity : AppCompatActivity() {
                 Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, UserBottomBarActivity::class.java)
                 startActivity(intent)
+//                finish()
+
             } else {
                 if (stuff.isChecked) {
                     Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
@@ -35,7 +38,6 @@ class FirstActivity : AppCompatActivity() {
                     val intent = Intent(this, AdminBottomBarActivity::class.java)
 //                    val intent = Intent(this, TimePickerActivity::class.java)
                     startActivity(intent)
-
                 } else {
                     Toast.makeText(this, "登录失败，请选择身份！", Toast.LENGTH_SHORT).show()
                 }

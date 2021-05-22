@@ -18,17 +18,9 @@ public class SenderFormActivity extends AppCompatActivity {
     private String sPro = "";
     private String sCity = "";
     private String sArea = "";
-
     private String sName = "";
     private String sPhone = "";
     private String sAddress = "";
-
-//    private String rName="";
-//    private String rPhone="";
-//    private String rAddress="";
-//    private String ePro="";
-//    private String eCity="";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +116,7 @@ public class SenderFormActivity extends AppCompatActivity {
                 Intent a = new Intent();
                 a.setClass(SenderFormActivity.this, UserBottomBarActivity.class);
                 startActivity(a);
+                SenderFormActivity.this.finish();
             }
         });
 
@@ -133,8 +126,6 @@ public class SenderFormActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-
     }
 
 

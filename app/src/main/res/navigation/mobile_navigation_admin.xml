@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.trytolearn.admin_ui.ui.home.HomeFragment"
+        android:name="com.example.trytolearn.admin_ui.ui.in.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home_admin" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.trytolearn.admin_ui.ui.dashboard.DashboardFragment"
+        android:name="com.example.trytolearn.admin_ui.ui.out.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard_admin" />
 
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.trytolearn.admin_ui.ui.notifications.NotificationsFragment"
+        android:name="com.example.trytolearn.admin_ui.ui.info.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications_admin" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.send.HomeFragment">
 
     <TextView
         android:layout_marginTop="40dp"
@@ -130,6 +130,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#999"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
                         android:text="物品类型：">
 
                     </TextView>
@@ -139,8 +143,14 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:textSize="16sp"
                         android:hint="日用品"></TextView>
+
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"></TextView>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -150,14 +160,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#999"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
                         android:text="物品重量："></TextView>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/weight"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:hint="/公斤"></EditText>
+                        android:textSize="16sp"
+                        android:hint="/公斤"></TextView>
                 </LinearLayout>
             </LinearLayout>
 
@@ -172,8 +187,8 @@
                     android:layout_width="300dp"
                     android:layout_height="54dp"
                     android:background="@color/white"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -182,10 +197,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="取件时间"
-                        android:textSize="14sp" />
+                        android:text="取件时间:"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#999"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
 
                     <TextView
+
                         android:id="@+id/tvPushTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -210,6 +229,7 @@
                 android:textAllCaps="false"
                 android:textColor="#fcfcfc"
                 android:textSize="16dp"
+                android:id="@+id/ime"
                 android:textStyle="bold" />
         </LinearLayout>
 
