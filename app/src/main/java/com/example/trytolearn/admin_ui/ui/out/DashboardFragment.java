@@ -1,4 +1,4 @@
-package com.example.trytolearn.admin_ui.ui.dashboard;
+package com.example.trytolearn.admin_ui.ui.out;
 
 import android.Manifest;
 import android.content.Intent;
@@ -40,6 +40,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startScan(ScanStyle.WECHAT, ScanCodeActivity.class);
+                Toast.makeText(getActivity(), "出库成功！", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.trytolearn.admin_ui.ui.home;
+package com.example.trytolearn.admin_ui.ui.in;
 
 import android.content.Intent;
 import android.os.Bundle;

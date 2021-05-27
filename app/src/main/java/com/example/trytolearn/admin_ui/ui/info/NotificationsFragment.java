@@ -1,4 +1,4 @@
-package com.example.trytolearn.admin_ui.ui.notifications;
+package com.example.trytolearn.admin_ui.ui.info;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

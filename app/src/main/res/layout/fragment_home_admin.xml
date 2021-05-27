@@ -1,91 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_ui.ui.home.HomeFragment">
+    android:background="@drawable/bg_4"
+    android:orientation="vertical"
+    tools:context=".admin_ui.ui.out.DashboardFragment">
 
     <TextView
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="扫码入库"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="30dp"></TextView>
 
-    <LinearLayout
-        android:layout_marginTop="100dp"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_corner_white"
-        tools:context=".SenderActivity"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:layout_height="300dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/bg_corner_white">
+    </TextView>
 
-            <Button
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonshapewhitebg"
-                android:text="下载密文"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#fcfcfc"
-                android:textSize="16dp" />
+    <Button
+        android:id="@+id/scan_incode"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_circle"
+        android:gravity="center"
+        android:text="扫码"
+        android:textAllCaps="false"
+        android:textColor="#fcfcfc"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="560dp" />
 
-            <Button
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonshapewhitebg"
-                android:text="解密下一站"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#fcfcfc"
-                android:textSize="16dp" />
-
-            <Button
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonshapewhitebg"
-                android:text="拨打电话"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#fcfcfc"
-                android:textSize="16dp" />
-
-            <Button
-                android:id="@+id/scan_incode"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/button_circle"
-                android:gravity="center"
-                android:text="扫码"
-                android:textAllCaps="false"
-                android:textColor="#fcfcfc"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
