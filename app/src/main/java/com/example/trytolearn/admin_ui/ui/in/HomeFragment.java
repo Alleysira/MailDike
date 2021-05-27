@@ -36,8 +36,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(getActivity(), RealMyScanActivity.class);
-                startActivity(intent2);
                 Toast.makeText(getActivity(), "开始入库", Toast.LENGTH_SHORT).show();
+                startActivity(intent2);
+
             }
         });
 

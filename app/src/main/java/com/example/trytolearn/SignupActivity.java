@@ -102,7 +102,6 @@ public class SignupActivity extends AppCompatActivity {
                     upload.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
                             AlertDialog.Builder dialog = new AlertDialog.Builder(SignupActivity.this);
                             dialog.setTitle("请确认您的位置属性：");
                             dialog.setMessage(info_property);
@@ -117,7 +116,7 @@ public class SignupActivity extends AppCompatActivity {
                                     java.text.DecimalFormat df = new java.text.DecimalFormat("#.000");
                                     str = df.format(Latitude);
                                     str2 = df.format(Longitude);
-                                    SharedPreferences.Editor editor = getSharedPreferences("info", MODE_PRIVATE).edit();
+                                    SharedPreferences.Editor editor = getSharedPreferences("Attr", MODE_PRIVATE).edit();
                                     editor.putString("Latitude", str);
                                     editor.putString("Longitude", str2);
                                     editor.apply();

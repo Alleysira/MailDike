@@ -15,21 +15,21 @@ class TrytocommunicateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_trytocommunicate)
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("http://10.136.97.196:8080/code/de?id=111&location=114.172%20and%2022.724")
-        webView.setDownloadListener(object : DownloadListener {
-            override fun onDownloadStart(
-                    url: String?,
-                    userAgent: String?,
-                    contentDisposition: String?,
-                    mimeType: String?,
-                    contentLength: Long
-            ) {
-                // 处理下载事件
-                if (!url.isNullOrEmpty()) {
-                    downloadByBrowser(url)
-                }
-            }
-        })
+        webView.loadUrl("http://192.168.137.225:8080/code/de?id=111&location=114.172%20and%2022.724")
+//        webView.setDownloadListener(object : DownloadListener {
+//            override fun onDownloadStart(
+//                    url: String?,
+//                    userAgent: String?,
+//                    contentDisposition: String?,
+//                    mimeType: String?,
+//                    contentLength: Long
+//            ) {
+//                // 处理下载事件
+//                if (!url.isNullOrEmpty()) {
+//                    downloadByBrowser(url)
+//                }
+//            }
+//        })
     }
 
     private fun downloadByBrowser(url: String) {
@@ -39,29 +39,5 @@ class TrytocommunicateActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-//    private fun sendRequestWithOkHttp(){
-//        thread {
-//            try {
-//                val client= OkHttpClient()
-//                val request= Request.Builder().url("https://www.baidu.com").build()
-//                val response=client.newCall(request).execute()
-//                val responseData= response.body?.string()
-//                if (responseData!=null){
-//                    showResponse(responseData)
-//                }
-//            }catch (e:Exception){
-//                e.printStackTrace()
-//            }
-//        }
-//    }
-
-    private class MyDownloadListener(val context: Context) : DownloadListener {
-        override fun onDownloadStart(url: String?, userAgent: String?, contentDisposition: String?, mimeType: String?, contentLength: Long) {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.addCategory(Intent.CATEGORY_BROWSABLE)
-            intent.setData(Uri.parse(url))
-            context.startActivity(intent)
-        }
-    }
 
 }

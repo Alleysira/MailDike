@@ -20,11 +20,23 @@ import com.yxing.ScanCodeActivity;
 import com.yxing.ScanCodeConfig;
 import com.yxing.def.ScanStyle;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import cn.edu.buaa.crypto.algebra.serparams.PairingCipherSerParameter;
 import cn.edu.buaa.crypto.algebra.serparams.PairingKeySerParameter;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class RealMyScanActivity extends AppCompatActivity {
     private static final String default_path_header = "/data/data/com.example.trytolearn/files/";
@@ -46,9 +58,15 @@ public class RealMyScanActivity extends AppCompatActivity {
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent();
-                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
-                startActivity(a);
+                // now the attribute is receiver attr
+                String attr = "113.705 and 22.963";
+                String[] fileNameList = {"header_Parameters", "header_C", "header_C1s", "header_C2s", "header_Crhos", "ciphertext1"};
+                for (String s : fileNameList) {
+                    getCipher(s, attr);
+                }
+//                Intent a = new Intent();
+//                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
+//                startActivity(a);
             }
         });
 
@@ -126,6 +144,68 @@ public class RealMyScanActivity extends AppCompatActivity {
                 });
     }
 
+
+    public void getCipher(String filename, String attr) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    SharedPreferences reader = getSharedPreferences("Attr", 0);
+                    String longitude = reader.getString("Longitude", "");
+                    String latitude = reader.getString("Latitude", "");
+                    String attr = longitude + " and " + latitude;
+                    OkHttpClient client = new OkHttpClient();
+                    RequestBody requestBody = new FormBody.Builder()
+                            .build();
+                    //"http://10.136.97.196:8080//waybill/android"192.168.43.7
+                    Request getRequest = new Request.Builder()
+                            .url("http://10.136.97.196:8080/code/getCode?id=1123165&location=" + attr + "&fileName=" + filename)
+                            .post(requestBody)
+                            .build();
+                    Response response = client.newCall(getRequest).execute();
+                    String requestdata = response.body().string();
+                    writeFile(filename, requestdata);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    public static void writeFile(String name, String data) {
+        File file = new File("/data/data/com.example.trytolearn/files/" + name);
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedWriter bw = new BufferedWriter(fw);
+        try {
+            bw.write(data + '\n');
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public String deAffine(@NotNull String cipher) {
+        char[] table = {'.', '?', '@', '^', '*', 'a', '&', '%', '/', '$'};
+        char[] c = cipher.toCharArray();
+        StringBuilder id = new StringBuilder();
+        for (char i : c) {
+            for (int j = 0; j <= 9; j++) {
+                if (i == table[j]) {
+                    id.append(j);
+                    break;
+                }
+            }
+        }
+        return id.toString();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -144,6 +224,7 @@ public class RealMyScanActivity extends AppCompatActivity {
                 });
 
                 String code = extras.getString(ScanCodeConfig.CODE_KEY);
+                code = deAffine(code);
                 //store in the order.xml
                 SharedPreferences.Editor editor = getSharedPreferences("order", MODE_PRIVATE).edit();
                 editor.putString("orderid", code);
@@ -175,21 +256,7 @@ public class RealMyScanActivity extends AppCompatActivity {
                     }
                 });
 
-//                File file = new File("/data/data/com.example.trytolearn/files/orderid");
-//                FileWriter fw = null;
-//                try {
-//                    fw = new FileWriter(file);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                BufferedWriter bw = new BufferedWriter(fw);
-//                try {
-//                    bw.write(code + '\n');
-//                    bw.close();
-//                    fw.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+
             }
         }
     }

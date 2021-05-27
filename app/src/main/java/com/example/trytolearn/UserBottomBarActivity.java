@@ -53,7 +53,7 @@ public class UserBottomBarActivity extends AppCompatActivity {
                 editor.apply();
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收成功！");
-                dialog.setMessage("您编号为：" + code + "的订单已经签收，感谢您使用邮堤");
+                dialog.setMessage("您编号为：" + code + "的订单已经签收");
                 dialog.setCancelable(true);
                 dialog.setPositiveButton("查看具体信息", new DialogInterface.OnClickListener() {
                     @Override
@@ -66,16 +66,17 @@ public class UserBottomBarActivity extends AppCompatActivity {
             } else {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收失败！");
+                dialog.setMessage("请核对是否是您的快递");
                 dialog.setCancelable(true);
                 dialog.show();
             }
         } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
             dialog.setTitle("签收失败！");
+            dialog.setMessage("请核对是否是您的快递");
             dialog.setCancelable(true);
             dialog.show();
         }
     }
-
 
 }
