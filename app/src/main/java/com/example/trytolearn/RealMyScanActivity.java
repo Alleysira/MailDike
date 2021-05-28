@@ -124,6 +124,22 @@ public class RealMyScanActivity extends AppCompatActivity {
                 });
     }
 
+
+    public String deAffine(String cipher) {
+        char[] table = {'.', '?', '@', '^', '*', 'a', '&', '%', '/', '$'};
+        char[] c = cipher.toCharArray();
+        StringBuilder id = new StringBuilder();
+        for (char i : c) {
+            for (int j = 0; j <= 9; j++) {
+                if (i == table[j]) {
+                    id.append(j);
+                    break;
+                }
+            }
+        }
+        return id.toString();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -147,6 +163,7 @@ public class RealMyScanActivity extends AppCompatActivity {
                 editor.putString("orderid", code);
                 editor.apply();
 
+                code = deAffine(code);
                 tvCode.setText(String.format("%s%s", "订单号： ", code));
 
                 //send String to the admin
