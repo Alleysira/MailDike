@@ -17,13 +17,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="北航邮堤"
+        android:label="邮堤"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoTitle_FullScreen"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Outputsuccess"></activity>
         <activity android:name=".TimePickerActivity" />
         <activity android:name=".AdminBottomBarActivity" />
         <activity android:name=".UserBottomBarActivity" />
