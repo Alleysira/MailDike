@@ -60,7 +60,16 @@ public class ReceiverFormActivity extends AppCompatActivity {
             }
         });
 
-
+        Button cancel = findViewById(R.id.cancelable);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent();
+                a.setClass(ReceiverFormActivity.this, UserBottomBarActivity.class);
+                startActivity(a);
+                ReceiverFormActivity.this.finish();
+            }
+        });
     }
 
 

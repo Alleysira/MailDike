@@ -325,6 +325,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
+            android:id="@+id/send_go_back"
             android:text="取消"
             android:textAllCaps="false"
             android:textStyle="bold"

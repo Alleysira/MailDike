@@ -39,6 +39,20 @@ public class UserBottomBarActivity extends AppCompatActivity {
 //        startScan(ScanStyle.WECHAT, ScanCodeActivity.class);
     }
 
+    public String deAffine(String cipher) {
+        char[] table = {'.', '?', '@', '^', '*', 'a', '&', '%', '/', '$'};
+        char[] c = cipher.toCharArray();
+        StringBuilder id = new StringBuilder();
+        for (char i : c) {
+            for (int j = 0; j <= 9; j++) {
+                if (i == table[j]) {
+                    id.append(j);
+                    break;
+                }
+            }
+        }
+        return id.toString();
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -51,6 +65,7 @@ public class UserBottomBarActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences("QRCode", 0).edit();
                 editor.putString("code1", code);
                 editor.apply();
+                code = deAffine(code);
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收成功！");
                 dialog.setMessage("您编号为：" + code + "的订单已经签收");
@@ -67,6 +82,13 @@ public class UserBottomBarActivity extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收失败！");
                 dialog.setMessage("请核对是否是您的快递");
+                dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "返回", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
                 dialog.setCancelable(true);
                 dialog.show();
             }
@@ -74,6 +96,13 @@ public class UserBottomBarActivity extends AppCompatActivity {
             AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
             dialog.setTitle("签收失败！");
             dialog.setMessage("请核对是否是您的快递");
+            dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "返回", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            });
             dialog.setCancelable(true);
             dialog.show();
         }

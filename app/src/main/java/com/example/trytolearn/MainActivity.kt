@@ -25,23 +25,28 @@ class FirstActivity : AppCompatActivity() {
 
         val button1: Button = findViewById(R.id.button1)// 登录
         button1.setOnClickListener() {
-            if (user.isChecked) {
-                Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, UserBottomBarActivity::class.java)
-                startActivity(intent)
-//                finish()
+            Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, UserBottomBarActivity::class.java)
+            startActivity(intent)
 
-            } else {
-                if (stuff.isChecked) {
-                    Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
-//                    val intent=Intent(this, WarehouseActivity::class.java)
-                    val intent = Intent(this, AdminBottomBarActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this, "登录失败，请选择身份！", Toast.LENGTH_SHORT).show()
-                }
 
-            }
+//            if (user.isChecked) {
+//                Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
+//                val intent = Intent(this, UserBottomBarActivity::class.java)
+//                startActivity(intent)
+////                finish()
+//
+//            } else {
+//                if (stuff.isChecked) {
+//                    Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
+////                    val intent=Intent(this, WarehouseActivity::class.java)
+//                    val intent = Intent(this, AdminBottomBarActivity::class.java)
+//                    startActivity(intent)
+//                } else {
+//                    Toast.makeText(this, "登录失败，请选择身份！", Toast.LENGTH_SHORT).show()
+//                }
+//
+//            }
 
         }
 

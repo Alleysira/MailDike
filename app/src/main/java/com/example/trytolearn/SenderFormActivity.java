@@ -76,6 +76,17 @@ public class SenderFormActivity extends AppCompatActivity {
             }
         });
 
+        Button go_back = findViewById(R.id.send_go_back);
+        go_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent();
+                a.setClass(SenderFormActivity.this, UserBottomBarActivity.class);
+                startActivity(a);
+                SenderFormActivity.this.finish();
+            }
+        });
+
 
         Button update = findViewById(R.id.update_sender_info);
         update.setOnClickListener(new View.OnClickListener() {

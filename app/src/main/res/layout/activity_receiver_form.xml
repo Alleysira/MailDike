@@ -273,6 +273,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="取消"
+            android:id="@+id/cancelable"
             android:textAllCaps="false"
             android:textStyle="bold"
             android:textColor="#fcfcfc"
