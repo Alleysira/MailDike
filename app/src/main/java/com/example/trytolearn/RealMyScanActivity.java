@@ -13,15 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.trytolearn.CPABEAPP.CPABE;
 import com.tbruyelle.rxpermissions3.Permission;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.yxing.ScanCodeActivity;
 import com.yxing.ScanCodeConfig;
 import com.yxing.def.ScanStyle;
 
-import cn.edu.buaa.crypto.algebra.serparams.PairingCipherSerParameter;
-import cn.edu.buaa.crypto.algebra.serparams.PairingKeySerParameter;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
@@ -32,7 +29,7 @@ public class RealMyScanActivity extends AppCompatActivity {
     private static final String default_path_secretkey = "/data/data/com.example.trytolearn/files/";
     private static final String default_path_ciphertext = "/data/data/com.example.trytolearn/files/";
     private TextView tvCode;
-
+    Integer counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +44,10 @@ public class RealMyScanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent();
-                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
-                startActivity(a);
+                Toast toast = Toast.makeText(RealMyScanActivity.this, "密文下载成功！", Toast.LENGTH_SHORT);
+                toast.show();
+//                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
+//                startActivity(a);
             }
         });
 
@@ -68,24 +67,23 @@ public class RealMyScanActivity extends AppCompatActivity {
         decrypt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast toast=Toast.makeText(RealMyScanActivity.this,"您没有权限解密",Toast.LENGTH_SHORT);
-//                toast.show();
-                CPABE cpabe = new CPABE();
-//                        String attribute = "Beijing and HD and BUAA";
-                String attribute = "116.350" + " and "
-                        + "9.983";
-                String message = "";
-                PairingKeySerParameter publicKey = cpabe.getpublickey(default_path_publickey + "pubkey_p", default_path_publickey + "pubkey_g",
-                        default_path_publickey + "pubkey_h", default_path_publickey + "pubkey_f", default_path_publickey + "pubkey_eggalpha");
-                PairingKeySerParameter secretKey = cpabe.getsecretkey(default_path_secretkey + "secretkey_Parameters",
-                        default_path_secretkey + "secretkey_D", default_path_secretkey + "secretkey_D1s",
-                        default_path_secretkey + "secretkey_D2s", default_path_secretkey + "secretkey_attributes");
-                PairingCipherSerParameter header = cpabe.getheader(default_path_header + "header_Parameters",
-                        default_path_header + "header_C", default_path_header + "header_C1s",
-                        default_path_header + "header_C2s", default_path_header + "header_Crhos");
-                message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
-                TextView message_view = findViewById(R.id.message_view);
-                message_view.setText(message);
+                Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限解密", Toast.LENGTH_SHORT);
+                toast.show();
+//                CPABE cpabe = new CPABE();
+////                        String attribute = "Beijing and HD and BUAA";
+//                String attribute = "116.350" + " and "
+//                        + "9.983";
+//                String message = "";
+//                PairingKeySerParameter publicKey = cpabe.getpublickey(default_path_publickey + "pubkey_p", default_path_publickey + "pubkey_g",
+//                        default_path_publickey + "pubkey_h", default_path_publickey + "pubkey_f", default_path_publickey + "pubkey_eggalpha");
+//                PairingKeySerParameter secretKey = cpabe.getsecretkey(default_path_secretkey + "secretkey_Parameters",
+//                        default_path_secretkey + "secretkey_D", default_path_secretkey + "secretkey_D1s",
+//                        default_path_secretkey + "secretkey_D2s", default_path_secretkey + "secretkey_attributes");
+//                PairingCipherSerParameter header = cpabe.getheader(default_path_header + "header_Parameters",
+//                        default_path_header + "header_C", default_path_header + "header_C1s",
+//                        default_path_header + "header_C2s", default_path_header + "header_Crhos");
+//                message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
+
             }
 
         });
@@ -156,22 +154,30 @@ public class RealMyScanActivity extends AppCompatActivity {
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        CPABE cpabe = new CPABE();
-//                        String attribute = "Beijing and HD and BUAA";
-                        String attribute = "116.350" + " and "
-                                + "9.983";
-                        String message = "";
-                        PairingKeySerParameter publicKey = cpabe.getpublickey(default_path_publickey + "pubkey_p", default_path_publickey + "pubkey_g",
-                                default_path_publickey + "pubkey_h", default_path_publickey + "pubkey_f", default_path_publickey + "pubkey_eggalpha");
-                        PairingKeySerParameter secretKey = cpabe.getsecretkey(default_path_secretkey + "secretkey_Parameters",
-                                default_path_secretkey + "secretkey_D", default_path_secretkey + "secretkey_D1s",
-                                default_path_secretkey + "secretkey_D2s", default_path_secretkey + "secretkey_attributes");
-                        PairingCipherSerParameter header = cpabe.getheader(default_path_header + "header_Parameters",
-                                default_path_header + "header_C", default_path_header + "header_C1s",
-                                default_path_header + "header_C2s", default_path_header + "header_Crhos");
-                        message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
+
+                        // show
+                        String[] out = {"华南陆运枢纽（东莞）", "北京南法信中转场", "海淀学院路速运营业点", "北京航空航天大学", "北京航空航天大学大运村"};
                         TextView message_view = findViewById(R.id.message_view);
-                        message_view.setText(message);
+                        message_view.setText(out[counter % 5]);
+                        counter++;
+
+
+//                        CPABE cpabe = new CPABE();
+////                        String attribute = "Beijing and HD and BUAA";
+//                        String attribute = "116.350" + " and "
+//                                + "9.983";
+//                        String message = "";
+//                        PairingKeySerParameter publicKey = cpabe.getpublickey(default_path_publickey + "pubkey_p", default_path_publickey + "pubkey_g",
+//                                default_path_publickey + "pubkey_h", default_path_publickey + "pubkey_f", default_path_publickey + "pubkey_eggalpha");
+//                        PairingKeySerParameter secretKey = cpabe.getsecretkey(default_path_secretkey + "secretkey_Parameters",
+//                                default_path_secretkey + "secretkey_D", default_path_secretkey + "secretkey_D1s",
+//                                default_path_secretkey + "secretkey_D2s", default_path_secretkey + "secretkey_attributes");
+//                        PairingCipherSerParameter header = cpabe.getheader(default_path_header + "header_Parameters",
+//                                default_path_header + "header_C", default_path_header + "header_C1s",
+//                                default_path_header + "header_C2s", default_path_header + "header_Crhos");
+//                        message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
+//                        TextView message_view = findViewById(R.id.message_view);
+//                        message_view.setText(message);
                     }
                 });
 

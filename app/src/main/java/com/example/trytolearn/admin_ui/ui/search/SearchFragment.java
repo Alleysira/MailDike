@@ -31,9 +31,8 @@ public class SearchFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         WebView webView = getActivity().findViewById(R.id.search_back);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.buaa.edu.cn/");
+        webView.loadUrl("http://10.136.97.196:8080/waybill");
         webView.setWebViewClient(new WebViewClient());
-
     }
 
 }
