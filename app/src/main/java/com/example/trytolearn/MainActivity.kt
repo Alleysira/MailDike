@@ -1,32 +1,62 @@
 package com.example.trytolearn
-
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.first_layout.*
+import kotlinx.coroutines.delay
 import java.io.BufferedWriter
 import java.io.File
 import java.io.IOException
 import java.io.OutputStreamWriter
+import org.jetbrains.anko.indeterminateProgressDialog
+import java.lang.Thread.sleep
 
 class FirstActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.first_layout)
-        second_edittext.setTransformationMethod(PasswordTransformationMethod.getInstance())//密码隐藏
-        second_edittext.setSelection(second_edittext.text.length)
+//        second_edittext.setTransformationMethod(PasswordTransformationMethod.getInstance())//密码隐藏
+//        second_edittext.setSelection(second_edittext.text.length)
 
         val button1: Button = findViewById(R.id.button1)// 登录
         button1.setOnClickListener() {
-            Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, AdminBottomBarActivity::class.java)
-            startActivity(intent)
+            //check the pass and the code
+            var account = main_account.text.toString()
+            var password = main_password.text.toString()
+
+            var reader: SharedPreferences = getSharedPreferences("admin", MODE_PRIVATE)
+            var stored_account = reader.getString("account", "")
+            var stored_password = reader.getString("password", "")
+
+            if (account != "") {
+                if (password != "") {
+                    if (account == stored_account) {
+                        if (password == stored_password) {
+                            val dialog = indeterminateProgressDialog("身份属性\n位置属性\n时间属性", "正在验证属性信息")
+                            dialog.show()
+
+                            Toast.makeText(this, "属性验证通过", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, AdminBottomBarActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "密码错误", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this, "账号不存在", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show()
+            }
+
 
 //            if (user.isChecked) {
 //                Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()

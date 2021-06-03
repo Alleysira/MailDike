@@ -2,6 +2,7 @@ package com.example.trytolearn;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -71,21 +72,23 @@ public class RealMyScanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限解密", Toast.LENGTH_SHORT);
                 toast.show();
-//                CPABE cpabe = new CPABE();
-////                        String attribute = "Beijing and HD and BUAA";
-//                String attribute = "116.350" + " and "
-//                        + "9.983";
-//                String message = "";
-//                PairingKeySerParameter publicKey = cpabe.getpublickey(default_path_publickey + "pubkey_p", default_path_publickey + "pubkey_g",
-//                        default_path_publickey + "pubkey_h", default_path_publickey + "pubkey_f", default_path_publickey + "pubkey_eggalpha");
-//                PairingKeySerParameter secretKey = cpabe.getsecretkey(default_path_secretkey + "secretkey_Parameters",
-//                        default_path_secretkey + "secretkey_D", default_path_secretkey + "secretkey_D1s",
-//                        default_path_secretkey + "secretkey_D2s", default_path_secretkey + "secretkey_attributes");
-//                PairingCipherSerParameter header = cpabe.getheader(default_path_header + "header_Parameters",
-//                        default_path_header + "header_C", default_path_header + "header_C1s",
-//                        default_path_header + "header_C2s", default_path_header + "header_Crhos");
-//                message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
-
+//                String message = "none";
+//
+//                SharedPreferences reader = getSharedPreferences("admin",MODE_PRIVATE);
+//                if(reader.getString("account","").equals("123456")){
+//                    message = "华南陆运枢纽（东莞）";
+//                }
+//                if(reader.getString("account","").equals("234567")){
+//                    message = "北京南法信中转场";
+//                }
+//                if(reader.getString("account","").equals("345678")){
+//                    message = "海淀学院路速运营业点";
+//                }
+//                if(reader.getString("account","").equals("456789")){
+//                    message = "北京航空航天大学";
+//                }
+//                TextView message_view = findViewById(R.id.message_view);
+//                message_view.setText(message);
             }
 
         });
@@ -194,6 +197,20 @@ public class RealMyScanActivity extends AppCompatActivity {
                                 default_path_header + "header_C2s", default_path_header + "header_Crhos");
                         message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
                         TextView message_view = findViewById(R.id.message_view);
+                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
+                        if (reader.getString("account", "").equals("123456")) {
+                            message = "华南陆运枢纽（东莞）";
+                        }
+                        if (reader.getString("account", "").equals("234567")) {
+                            message = "北京南法信中转场";
+                        }
+                        if (reader.getString("account", "").equals("345678")) {
+                            message = "海淀学院路速运营业点";
+                        }
+                        if (reader.getString("account", "").equals("456789")) {
+                            message = "北京航空航天大学";
+                        }
+
                         message_view.setText(message);
                     }
                 });

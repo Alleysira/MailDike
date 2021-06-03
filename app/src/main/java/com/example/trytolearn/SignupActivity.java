@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ import java.util.List;
 public class SignupActivity extends AppCompatActivity {
     public LocationClient mLocationClient;
     public String info_property = "";
-
+    public int flag = 0; //upload
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +60,54 @@ public class SignupActivity extends AppCompatActivity {
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent();
-                a.setClass(SignupActivity.this, FirstActivity.class);
-                Toast toast = Toast.makeText(getApplicationContext(), "注册成功！前往登录", Toast.LENGTH_SHORT);
-                toast.show();
-                startActivity(a);
+                EditText acc = findViewById(R.id.first_editText);
+                EditText pass1 = findViewById(R.id.second_edittext_2);
+                EditText pass2 = findViewById(R.id.third_edittext);
+
+                String word1 = pass1.getText().toString();
+                String word2 = pass2.getText().toString();
+                String account = acc.getText().toString();
+                if (!account.equals("")) {
+                    if (!word1.equals("")) {
+                        if (!word2.equals("")) {
+                            if (word1.equals(word2)) {
+                                if (flag == 1) {
+                                    //store the acc and password
+                                    SharedPreferences.Editor editor = getSharedPreferences("admin", MODE_PRIVATE).edit();
+                                    editor.putString("account", account);
+                                    editor.putString("password", word1);
+                                    editor.apply();
+
+                                    //change the activity
+                                    Intent a = new Intent();
+                                    a.setClass(SignupActivity.this, FirstActivity.class);
+                                    Toast toast = Toast.makeText(getApplicationContext(), "注册成功！前往登录", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                    startActivity(a);
+                                    SignupActivity.this.finish();
+                                } else {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "请上传位置属性", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+
+                            } else {
+                                Toast toast = Toast.makeText(getApplicationContext(), "请核对两次输入的密码", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        } else {
+                            Toast toast = Toast.makeText(getApplicationContext(), "请再次输入密码", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(), "请输入密码", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "请输入账号", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
+
             }
         });
 
@@ -117,10 +161,11 @@ public class SignupActivity extends AppCompatActivity {
                                     java.text.DecimalFormat df = new java.text.DecimalFormat("#.000");
                                     str = df.format(Latitude);
                                     str2 = df.format(Longitude);
-                                    SharedPreferences.Editor editor = getSharedPreferences("info", MODE_PRIVATE).edit();
+                                    SharedPreferences.Editor editor = getSharedPreferences("admin", MODE_PRIVATE).edit();
                                     editor.putString("Latitude", str);
                                     editor.putString("Longitude", str2);
                                     editor.apply();
+                                    flag = 1;
                                     Toast toast = Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT);
                                     toast.show();
                                 }
@@ -129,7 +174,8 @@ public class SignupActivity extends AppCompatActivity {
                             dialog.setNegativeButton("放弃", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-
+                                    Toast toast = Toast.makeText(getApplicationContext(), "上传失败", Toast.LENGTH_SHORT);
+                                    toast.show();
                                 }
                             });
                             dialog.show();
