@@ -95,7 +95,6 @@
                     <TextView
                         android:padding="10dp"
                         android:background="@drawable/bg_corner_white"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -163,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="已签收"
+                        android:text="未签收"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>

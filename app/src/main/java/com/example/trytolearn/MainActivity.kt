@@ -2,6 +2,7 @@ package com.example.trytolearn
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.widget.Button
@@ -20,14 +21,35 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.first_layout)
-        second_edittext.transformationMethod = PasswordTransformationMethod.getInstance()//密码隐藏
-        second_edittext.setSelection(second_edittext.text.length)
 
         val button1: Button = findViewById(R.id.button1)// 登录
         button1.setOnClickListener() {
-            Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, UserBottomBarActivity::class.java)
-            startActivity(intent)
+            var account = main_account.text.toString()
+            var password = main_password.text.toString()
+
+            var reader: SharedPreferences = getSharedPreferences("user", MODE_PRIVATE)
+            var stored_account = reader.getString("account", "")
+            var stored_password = reader.getString("password", "")
+
+            if (account != "") {
+                if (password != "") {
+                    if (account == stored_account) {
+                        if (password == stored_password) {
+                            Toast.makeText(this, "登录成功，欢迎您！", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, UserBottomBarActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "密码错误", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this, "账号不存在", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show()
+            }
 
 
 //            if (user.isChecked) {

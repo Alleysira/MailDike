@@ -22,7 +22,6 @@ public class UserBottomBarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_bar);
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setItemIconTintList(null);
         // Passing each menu ID as a set of Ids because each
