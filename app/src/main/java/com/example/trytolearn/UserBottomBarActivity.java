@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -67,6 +68,14 @@ public class UserBottomBarActivity extends AppCompatActivity {
                 code = deAffine(code);
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收成功！");
+                TextView text = findViewById(R.id.get_changed_receive);
+                text.setText("已签收");
+                TextView name = findViewById(R.id.rece_name);
+                name.setText("小潘");
+                TextView phone = findViewById(R.id.rece_tel);
+                phone.setText("17793709599");
+                TextView tel = findViewById(R.id.tel);
+                tel.setText(code);
                 dialog.setMessage("您编号为：" + code + "的订单已经签收");
                 dialog.setCancelable(true);
                 dialog.setPositiveButton("查看具体信息", new DialogInterface.OnClickListener() {

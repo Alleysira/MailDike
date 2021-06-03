@@ -64,11 +64,11 @@
                     <TextView
                         android:padding="10dp"
                         android:background="@drawable/bg_corner_white"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="小潘"
+                        android:text="未知"
+                        android:id="@+id/rece_name"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -99,7 +99,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="18993771199"
+                        android:text="空"
+                        android:id="@+id/rece_tel"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -120,6 +121,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="订单编号:"
+
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>
 
@@ -130,7 +132,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="11011011"
+                        android:id="@+id/tel"
+                        android:text="空"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -158,6 +161,7 @@
                     <TextView
                         android:background="@drawable/bg_corner_white"
                         android:padding="10dp"
+                        android:id="@+id/get_changed_receive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

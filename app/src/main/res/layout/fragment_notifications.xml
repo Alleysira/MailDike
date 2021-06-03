@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="19373434"
+                        android:text="123456"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
