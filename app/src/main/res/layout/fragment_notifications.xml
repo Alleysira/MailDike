@@ -81,6 +81,7 @@
 
                     <TextView
                         android:padding="10dp"
+
                         android:background="@drawable/bg_corner_white"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
                     <TextView
                         android:padding="10dp"
                         android:background="@drawable/bg_corner_white"
-                        android:id="@+id/jobnumber"
+                        android:id="@+id/user_account"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -123,13 +124,13 @@
                         android:textSize="20dp"></TextView>
 
                     <TextView
-                        android:padding="10dp"
-                        android:background="@drawable/bg_corner_white"
-                        android:id="@+id/tel"
+                        android:id="@+id/user_tel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@drawable/bg_corner_white"
                         android:gravity="center"
+                        android:padding="10dp"
                         android:text="17793709599"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
@@ -151,6 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:id="@+id/user_address"
                         android:text="用户地址:"
                         android:textColor="#666"
                         android:textSize="20dp"></TextView>

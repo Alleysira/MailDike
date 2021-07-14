@@ -32,12 +32,8 @@ public class UserBottomBarActivity extends AppCompatActivity {
 //                .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
-        //change color
-//        Resources resource = getResources();
-//        ColorStateList csl = ContextCompat.getColor(context, R.color.blue);
-//        navView.setItemTextColor(csl);
-//        startScan(ScanStyle.WECHAT, ScanCodeActivity.class);
     }
+
 
     public String deAffine(String cipher) {
         char[] table = {'.', '?', '@', '^', '*', 'a', '&', '%', '/', '$'};

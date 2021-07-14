@@ -73,7 +73,7 @@ public class SignupActivity extends AppCompatActivity {
                         if (!word2.equals("")) {
                             if (word1.equals(word2)) {
                                 if (flag == 1) {
-                                    //store the acc and password
+                                    //store the account and password
                                     SharedPreferences.Editor editor = getSharedPreferences("user", MODE_PRIVATE).edit();
                                     editor.putString("account", account);
                                     editor.putString("password", word1);
@@ -210,7 +210,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
                     requestLocation();
                 } else {
-                    Toast.makeText(this, "发生未知错误", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "发生错误", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 break;

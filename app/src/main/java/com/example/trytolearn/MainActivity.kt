@@ -95,7 +95,7 @@ class FirstActivity : AppCompatActivity() {
 
     fun build_for_crypto() {
         createFolder(default_path_benchmarks)
-        save_file_second()
+        save_cipher_file()
     }
 
     private fun save(name: String, inputText: String) {
@@ -109,7 +109,7 @@ class FirstActivity : AppCompatActivity() {
     }
 
 
-    fun save_file_second() {
+    fun save_cipher_file() {
         save("ciphertext1", "gEKPFRzLVmPBz0/HKrs4J08iSNqjGT6IPc+B3D6GW6TPf+tQUMLbH8vNMDzQyjoa")
         save(
                 "header_C", "-80\n" +
