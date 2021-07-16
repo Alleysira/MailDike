@@ -2,7 +2,6 @@ package com.example.trytolearn;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -46,11 +45,11 @@ public class RealMyScanActivity extends AppCompatActivity {
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(RealMyScanActivity.this, "密文下载成功！", Toast.LENGTH_SHORT);
-                toast.show();
-//                Intent a = new Intent();
-//                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
-//                startActivity(a);
+//                Toast toast = Toast.makeText(RealMyScanActivity.this, "密文下载成功！", Toast.LENGTH_SHORT);
+//                toast.show();
+                Intent a = new Intent();
+                a.setClass(RealMyScanActivity.this, TrytocommunicateActivity.class);
+                startActivity(a);
             }
         });
 
@@ -197,19 +196,21 @@ public class RealMyScanActivity extends AppCompatActivity {
                                 default_path_header + "header_C2s", default_path_header + "header_Crhos");
                         message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
                         TextView message_view = findViewById(R.id.message_view);
-                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
-                        if (reader.getString("account", "").equals("123456")) {
-                            message = "华南陆运枢纽（东莞）";
-                        }
-                        if (reader.getString("account", "").equals("234567")) {
-                            message = "北京南法信中转场";
-                        }
-                        if (reader.getString("account", "").equals("345678")) {
-                            message = "海淀学院路速运营业点";
-                        }
-                        if (reader.getString("account", "").equals("456789")) {
-                            message = "北京航空航天大学";
-                        }
+
+                        //for display
+//                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
+//                        if (reader.getString("account", "").equals("123456")) {
+//                            message = "华南陆运枢纽（东莞）";
+//                        }
+//                        if (reader.getString("account", "").equals("234567")) {
+//                            message = "北京南法信中转场";
+//                        }
+//                        if (reader.getString("account", "").equals("345678")) {
+//                            message = "海淀学院路速运营业点";
+//                        }
+//                        if (reader.getString("account", "").equals("456789")) {
+//                            message = "北京航空航天大学";
+//                        }
 
                         message_view.setText(message);
                     }

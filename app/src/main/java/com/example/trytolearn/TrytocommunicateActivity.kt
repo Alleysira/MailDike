@@ -15,7 +15,7 @@ class TrytocommunicateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_trytocommunicate)
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("http://10.136.97.196:8080/code/de?id=111&location=114.172%20and%2022.724")
+        webView.loadUrl("http://10.135.170.15:8080/code/de?id=111&location=114.172%20and%2022.724")
         webView.setDownloadListener(object : DownloadListener {
             override fun onDownloadStart(
                     url: String?,
