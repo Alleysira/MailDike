@@ -1,4 +1,4 @@
-package com.example.trytolearn.ui.info;
+package com.example.trytolearn.user.info;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package com.example.trytolearn.ui.info;
+package com.example.trytolearn.user.info;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -60,7 +60,6 @@ public class NotificationsFragment extends Fragment {
         String add = reader2.getString("rPro", "");
         add += reader2.getString("rCity", "");
         add += reader2.getString("rArea", "");
-        add += reader2.getString("rAddress", "");
         TextView place = getActivity().findViewById(R.id.mail_station);
         place.setText(add);
 

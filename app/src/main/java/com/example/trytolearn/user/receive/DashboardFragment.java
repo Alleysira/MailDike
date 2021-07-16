@@ -1,4 +1,4 @@
-package com.example.trytolearn.ui.receive;
+package com.example.trytolearn.user.receive;
 
 import android.Manifest;
 import android.os.Bundle;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.send.HomeFragment">
+    tools:context=".user.send.HomeFragment">
 
     <TextView
         android:layout_marginTop="40dp"
@@ -232,7 +232,5 @@
                 android:id="@+id/ime"
                 android:textStyle="bold" />
         </LinearLayout>
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

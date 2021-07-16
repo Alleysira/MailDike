@@ -1,4 +1,4 @@
-package com.example.trytolearn.ui.send;
+package com.example.trytolearn.user.send;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -220,13 +220,14 @@ public class HomeFragment extends Fragment {
 
 
                     String msg2 = "";
+                    //msg2 contains signature  both names and phone numbers
                     msg2 += my_sender.getString("sName", "") + "\n";
                     msg2 += my_sender.getString("sPhone", "") + "\n";
                     msg2 += my_receiver.getString("rName", "") + "\n";
                     msg2 += my_receiver.getString("rPhone", "") + "\n";
 
+                    //build rsa keys
                     SharedPreferences.Editor editor_key = getActivity().getSharedPreferences("rsakey", MODE_PRIVATE).edit();
-
                     String privateKey = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTJK2H-siKcVJDPmNL9iDeAUCI2kHMp4SkZJb8EXqPpbQIVGTQjqwTD7H2Lt0XLgLkZgldLzMleGER7sXGCyPTpzjH8Xcm_QhUXGbH8aV9zju3KkNHPGSSW58jNwfGW9R5K75Px4zzt0NlHCa1k7Du5YHVbyy7xuodlrOLOKSNnnlKys4Rkj_sHnnECMerqe7OiKdFAEkBjEQ9FTXQ9F-PC761bvRIGE23fU1b2z5wyZ-2tCcEDl0mm4HkDLaWoQeQN1bQMs6GgTVaMJWsAM145O4wy9e6irbraoTTNLQFANdEmX-O2u82wp-_6xHQxQYLldUgMJMJJ_z7uNJ9fGzlAgMBAAECggEBAKA8jZVMtTSbm5p8lk7nkznoKVmyiY0O9JLt48eYXDL3xhEsOvYr0FsG5j-2gQM-X-OFrEWTtHUTTleVpXIOsjnGBkl27r4f-VpMZZQHx1gaUydGY5iENK796V-IO9ZFipIKqHtTLZ0nz3XET3wtgXFLq6SWopQ--R1LaSaW7gqqgLZGZb6EQmil3JOkEBvV1zWmHcoYUY9gKDYboyU0pn5Jli6R3GezF1IcmSdN7wXuVTCYCQBImIIfOFJ7VotumWiDkcP6oIAjS8g2g017ad52iCoOLTc4ki0s86rptrsR7tQVm17F2SPMbRzcGCa88EQpDVfOLLkW0FZ3kyTY-QECgYEA8P1_8MXapHVFJo2bRwf8UBtUkH4toaQn7USSpWX6yGQ1KsjwlTZ-qvYzyArv-7zOHHMvswL96WGMjwG9urT_4FqtkNMCAL8fAcfeOojsUpp61b2S-K-vnrXqscRiPlT2FhxZEW45zARY2o-a_vhyLLYeSiqcxUPCyJ-62SOH65kCgYEA4EtHgiUVHc6Dpi1oFsXTKHYxOuNeWZUOEz4pksK5n3hVbCVG7mY46kDgNpsgGYwDR3rKsZAQsfmPnZjJun96LKYsiTam1h-mAB93ULLWQ6PmNhhFEENHwSvo0pCA1m4ShvvW77s-jyfX1TM67H6H2XOkql-Mx8NReSO-gucB-y0CgYEAqRVT1P0dANJ-6CPm1JmXwCTM2myNW6IvmVvJgF7i7ALTAuflVOvdR9piTnLOGlRIUNHIn9Lzj_Gviw7vrbYc6a71pG1INHnkKX2wQGWdWf-lO549Jlst3y9IMd3WCGHYH39YRtCNoMVUClVDrK1oflJxQhxPzmBSpCzeDkfNr9ECgYAEGnx5bhI_1FpmPOhtmjrtv5PQ_v3n56k1Qurhy3w35ayyaNAuZmJeLserWBUzQnOA6EczDm6vwuAUwwnVxqVGkde4vu44dqXD1M-LA2qWHDaHANSqooB6kUIWMBybT7I5E_xvsF5JojH5rZFDaGE14j69-zeJJBKmg7fljzJjFQKBgHC731QM3tfz58JQCdzydwtsLnqKjkdADECYScT-q2IdnH04BcBPZxyeriT_EpXfjbDeCLVrpQWvCDWiLtpfSyRB1fAI8FAH-NWw1fthy9vgQE2ncBA8vKSXKhi3joH6fSFfZJq-oMAOqxUJnKAKOHqozvYjUVtfDeaQclbLOMf3";
                     String publicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0ySth_rIinFSQz5jS_Yg3gFAiNpBzKeEpGSW_BF6j6W0CFRk0I6sEw-x9i7dFy4C5GYJXS8zJXhhEe7Fxgsj06c4x_F3Jv0IVFxmx_Glfc47typDRzxkklufIzcHxlvUeSu-T8eM87dDZRwmtZOw7uWB1W8su8bqHZazizikjZ55SsrOEZI_7B55xAjHq6nuzoinRQBJAYxEPRU10PRfjwu-tW70SBhNt31NW9s-cMmftrQnBA5dJpuB5Ay2lqEHkDdW0DLOhoE1WjCVrADNeOTuMMvXuoq262qE0zS0BQDXRJl_jtrvNsKfv-sR0MUGC5XVIDCTCSf8-7jSfXxs5QIDAQAB";
                     String signature = RSAUtils.publicEncrypt("BUAA", RSAUtils.getPublicKey(publicKey));  //传入明文和公钥加密,得到密文
@@ -261,7 +262,7 @@ public class HomeFragment extends Fragment {
                             .build();
 
                     Request postrequest = new Request.Builder()
-                            .url("http://10.136.97.196:8080/waybill/android")
+                            .url("http://10.135.170.15:8080/waybill/android")
                             .post(requestBody)
                             .build();
                     Response response = client.newCall(postrequest).execute();
