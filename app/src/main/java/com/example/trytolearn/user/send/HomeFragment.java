@@ -235,16 +235,22 @@ public class HomeFragment extends Fragment {
                     editor_key.putString("rsaprivateKey", privateKey);
                     editor_key.apply();
 
-
                     msg2 += signature + "\n";
                     msg2 += my_receiver.getString("RN", "");
                     String section3 = RSAUtils.publicDecrypt(msg2, RSAUtils.getPublicKey(publicKey));
 
-                    OkHttpClient client = new OkHttpClient();
-                    String section2 = cp_cipher;
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences("sec", MODE_PRIVATE).edit();
 
+
+                    String rsadecrypt = RSAUtils.privateDecrypt(signature, RSAUtils.getPrivateKey(privateKey));
+                    editor.putString("rsaencrypt", signature);
+                    editor.putString("rsadecrypt", rsadecrypt);
+                    editor.apply();
+
+
+                    OkHttpClient client = new OkHttpClient();
                     RequestBody requestBody = new FormBody.Builder()
-                            .add("section2", section2)
+                            .add("section2", cp_cipher)
                             .add("section3", section3)
                             .add("sPro", my_sender.getString("sPro", ""))
                             .add("sCity", my_sender.getString("sCity", ""))
@@ -261,11 +267,11 @@ public class HomeFragment extends Fragment {
                             .add("rec_header_C2s", getHeader("header_C2s"))
                             .build();
 
-                    Request postrequest = new Request.Builder()
+                    Request postRequest = new Request.Builder()
                             .url("http://10.135.170.15:8080/waybill/android")
                             .post(requestBody)
                             .build();
-                    Response response = client.newCall(postrequest).execute();
+                    Response response = client.newCall(postRequest).execute();
 //                    String requestdata = response.body().string();
 //                    showResponse(requestdata);
                 } catch (Exception e) {
@@ -316,4 +322,6 @@ public class HomeFragment extends Fragment {
 //            }
 //        }).start();
 //    }
+
+
 }
