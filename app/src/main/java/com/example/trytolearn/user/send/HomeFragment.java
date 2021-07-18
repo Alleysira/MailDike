@@ -212,13 +212,23 @@ public class HomeFragment extends Fragment {
                     message += getHn() + "\n";
                     message += my_sender.getString("sPhone", "") + "\n";
                     message += my_receiver.getString("rPhone", "") + "\n";
+
+
                     cpabe_encrypt(message);
+
+//                    long start = System.nanoTime();
+//
+//                    long end = System.nanoTime();
+//
+//                    long time = end - start;
+//
+//                    Button check = getActivity().findViewById(R.id.ime);
+//                    check.setText(Long.toString(time/50));
+
 
                     String cp_cipher = readFormFile("ciphertext2");
 
                     //build sec3
-
-
                     String msg2 = "";
                     //msg2 contains signature  both names and phone numbers
                     msg2 += my_sender.getString("sName", "") + "\n";
