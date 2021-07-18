@@ -77,13 +77,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation files('libs\\BaiduLBS_Android.jar')
-    implementation files('libs\\bcprov-ext-jdk14-168.jar')
-    implementation files('libs\\jpbc-plaf-2.0.0.jar')
-    implementation files('libs\\jpbc-crypto-2.0.0.jar')
-    implementation files('libs\\commons-codec-1.11.jar')
-    implementation files('libs\\Jama-1.0.3.jar')
-    implementation files('libs\\jpbc-api-2.0.0.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/bcprov-ext-jdk14-168.jar')
+    implementation files('libs/jpbc-plaf-2.0.0.jar')
+    implementation files('libs/jpbc-crypto-2.0.0.jar')
+    implementation files('libs/commons-codec-1.11.jar')
+    implementation files('libs/Jama-1.0.3.jar')
+    implementation files('libs/jpbc-api-2.0.0.jar')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

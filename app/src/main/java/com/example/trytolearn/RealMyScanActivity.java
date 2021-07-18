@@ -2,6 +2,7 @@ package com.example.trytolearn;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -71,23 +72,6 @@ public class RealMyScanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限解密", Toast.LENGTH_SHORT);
                 toast.show();
-//                String message = "none";
-//
-//                SharedPreferences reader = getSharedPreferences("admin",MODE_PRIVATE);
-//                if(reader.getString("account","").equals("123456")){
-//                    message = "华南陆运枢纽（东莞）";
-//                }
-//                if(reader.getString("account","").equals("234567")){
-//                    message = "北京南法信中转场";
-//                }
-//                if(reader.getString("account","").equals("345678")){
-//                    message = "海淀学院路速运营业点";
-//                }
-//                if(reader.getString("account","").equals("456789")){
-//                    message = "北京航空航天大学";
-//                }
-//                TextView message_view = findViewById(R.id.message_view);
-//                message_view.setText(message);
             }
 
         });
@@ -162,13 +146,15 @@ public class RealMyScanActivity extends AppCompatActivity {
                 });
 
                 String code = extras.getString(ScanCodeConfig.CODE_KEY);
-                //store in the order.xml
-//                SharedPreferences.Editor editor = getSharedPreferences("order", MODE_PRIVATE).edit();
-//                editor.putString("orderid", code);
-//                editor.apply();
+
 
                 code = deAffine(code);
                 tvCode.setText(String.format("%s%s", "订单号： ", code));
+
+//              store in the order.xml
+                SharedPreferences.Editor editor = getSharedPreferences("order", MODE_PRIVATE).edit();
+                editor.putString("orderid", code);
+                editor.apply();
 
                 //send String to the admin
                 Button b = findViewById(R.id.solve);
@@ -176,11 +162,6 @@ public class RealMyScanActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        // show
-//                        String[] out = {"华南陆运枢纽（东莞）", "北京南法信中转场", "海淀学院路速运营业点", "北京航空航天大学", "北京航空航天大学大运村"};
-//                        TextView message_view = findViewById(R.id.message_view);
-//                        message_view.setText(out[counter % 5]);
-//                        counter++;
 
                         CPABE cpabe = new CPABE();
                         String attribute = "116.350" + " and "
@@ -197,40 +178,17 @@ public class RealMyScanActivity extends AppCompatActivity {
                         message = cpabe.Deryption(publicKey, attribute, secretKey, header, default_path_ciphertext + "ciphertext1");
                         TextView message_view = findViewById(R.id.message_view);
 
-                        //for display
-//                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
-//                        if (reader.getString("account", "").equals("123456")) {
-//                            message = "华南陆运枢纽（东莞）";
-//                        }
-//                        if (reader.getString("account", "").equals("234567")) {
-//                            message = "北京南法信中转场";
-//                        }
-//                        if (reader.getString("account", "").equals("345678")) {
-//                            message = "海淀学院路速运营业点";
-//                        }
-//                        if (reader.getString("account", "").equals("456789")) {
-//                            message = "北京航空航天大学";
-//                        }
 
+                        //for display
+                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
+                        if (reader.getString("account", "").equals("guangdong")) {
+                            message = "华南陆运枢纽（东莞）";
+                        }
                         message_view.setText(message);
                     }
                 });
 
-//                File file = new File("/data/data/com.example.trytolearn/files/orderid");
-//                FileWriter fw = null;
-//                try {
-//                    fw = new FileWriter(file);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                BufferedWriter bw = new BufferedWriter(fw);
-//                try {
-//                    bw.write(code + '\n');
-//                    bw.close();
-//                    fw.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+
             }
         }
     }
