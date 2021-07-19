@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     TextView tvPushTime;
-
+    String ip = "10.136.97.196";
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -278,7 +278,7 @@ public class HomeFragment extends Fragment {
                             .build();
 
                     Request postRequest = new Request.Builder()
-                            .url("http://10.135.170.15:8080/waybill/android")
+                            .url("http://" + ip + ":8080/waybill/android")
                             .post(requestBody)
                             .build();
                     Response response = client.newCall(postRequest).execute();
