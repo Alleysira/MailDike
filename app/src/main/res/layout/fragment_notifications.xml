@@ -66,7 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="霍去病"
+                        android:text="小邮"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -99,7 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="1367108378"
+                        android:text="sender"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -131,7 +131,7 @@
                         android:background="@drawable/bg_corner_white"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="17793709599"
+                        android:text="18993771199"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -165,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="甘肃省酒泉市敦煌市"
+                        android:text="北京市海淀区圆明园"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>

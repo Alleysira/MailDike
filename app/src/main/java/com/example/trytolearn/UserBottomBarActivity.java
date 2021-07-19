@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yxing.ScanCodeConfig;
 
 public class UserBottomBarActivity extends AppCompatActivity {
-
+    String code = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,31 +57,47 @@ public class UserBottomBarActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == ScanCodeConfig.QUESTCODE && data != null) {
             Bundle extras = data.getExtras();
             if (extras != null) {
-                String code = extras.getString(ScanCodeConfig.CODE_KEY);
+                code = extras.getString(ScanCodeConfig.CODE_KEY);
                 SharedPreferences.Editor editor = getSharedPreferences("QRCode", 0).edit();
                 editor.putString("code1", code);
                 editor.apply();
                 code = deAffine(code);
-                AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
-                dialog.setTitle("签收成功！");
-                TextView text = findViewById(R.id.get_changed_receive);
-                text.setText("已签收");
-                TextView name = findViewById(R.id.rece_name);
-                name.setText("小潘");
-                TextView phone = findViewById(R.id.rece_tel);
-                phone.setText("17793709599");
-                TextView tel = findViewById(R.id.tel);
-                tel.setText(code);
-                dialog.setMessage("您编号为：" + code + "的订单已经签收");
-                dialog.setCancelable(true);
-                dialog.setPositiveButton("查看具体信息", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast toast = Toast.makeText(getApplicationContext(), "请核对物流信息", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-                });
-                dialog.show();
+                if (code.equals("87489014")) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
+                    dialog.setTitle("签收成功！");
+                    TextView text = findViewById(R.id.get_changed_receive);
+                    text.setText("已签收");
+                    TextView name = findViewById(R.id.rece_name);
+                    name.setText("小邮");
+                    TextView phone = findViewById(R.id.rece_tel);
+                    phone.setText("18993771199");
+                    TextView tel = findViewById(R.id.tel);
+                    tel.setText(code);
+                    dialog.setMessage("您编号为：" + code + "的订单已经签收");
+                    dialog.setCancelable(true);
+                    dialog.setPositiveButton("查看具体信息", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast toast = Toast.makeText(getApplicationContext(), "请核对物流信息", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
+                    dialog.show();
+                } else {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
+                    dialog.setTitle("签收失败！");
+                    dialog.setMessage("请核对是否是您的快递");
+                    dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast toast = Toast.makeText(getApplicationContext(), "返回", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
+                    dialog.setCancelable(true);
+                    dialog.show();
+                }
+
             } else {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(UserBottomBarActivity.this);
                 dialog.setTitle("签收失败！");

@@ -41,6 +41,7 @@ public class NotificationsFragment extends Fragment {
         change_info();
     }
 
+
     private void change_info() {
         //change account into sender
         SharedPreferences reader = getActivity().getSharedPreferences("user", MODE_PRIVATE);
