@@ -32,7 +32,7 @@ public class RealMyScanActivity extends AppCompatActivity {
     private static final String default_path_secretkey = "/data/data/com.example.trytolearn/files/";
     private static final String default_path_ciphertext = "/data/data/com.example.trytolearn/files/";
     private TextView tvCode;
-    Integer counter = 0;
+    String code = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,10 +59,9 @@ public class RealMyScanActivity extends AppCompatActivity {
         tell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限拨打用户电话", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限拨打用户电话！", Toast.LENGTH_SHORT);
                 toast.show();
             }
-
         });
 
 
@@ -70,12 +69,19 @@ public class RealMyScanActivity extends AppCompatActivity {
         decrypt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限解密", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(RealMyScanActivity.this, "您没有权限解密！", Toast.LENGTH_SHORT);
                 toast.show();
             }
 
         });
 
+        Button check = findViewById(R.id.checkreceive);
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(RealMyScanActivity.this, "您没有权限签收！", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -139,15 +145,18 @@ public class RealMyScanActivity extends AppCompatActivity {
                 tell.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent a = new Intent(Intent.ACTION_DIAL);
-                        a.setData(Uri.parse("tel:17793709599"));
-                        startActivity(a);
+                        if (code.equals("87489014")) {
+                            Intent a = new Intent(Intent.ACTION_DIAL);
+                            a.setData(Uri.parse("tel:18993772299"));
+                            startActivity(a);
+                        } else {
+                            Toast.makeText(RealMyScanActivity.this, "您没有权限拨打电话！", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 });
 
-                String code = extras.getString(ScanCodeConfig.CODE_KEY);
-
-
+                code = extras.getString(ScanCodeConfig.CODE_KEY);
                 code = deAffine(code);
                 tvCode.setText(String.format("%s%s", "订单号： ", code));
 
@@ -180,9 +189,17 @@ public class RealMyScanActivity extends AppCompatActivity {
 
 
                         //for display
-                        SharedPreferences reader = getSharedPreferences("admin", MODE_PRIVATE);
-                        if (reader.getString("account", "").equals("guangdong")) {
-                            message = "华南陆运枢纽（东莞）";
+                        switch (code) {
+                            case "10374562":
+                                Toast.makeText(RealMyScanActivity.this, "您没有权限签收！", Toast.LENGTH_SHORT).show();
+                                message = "";
+                                break;
+                            case "98543216":
+                                message = "烟台转运中心";
+                                break;
+                            case "87489014":
+                                message = "青岛市即墨区滨海路72号";
+                                break;
                         }
                         message_view.setText(message);
                     }
@@ -190,6 +207,20 @@ public class RealMyScanActivity extends AppCompatActivity {
 
 
             }
+            Button check = findViewById(R.id.checkreceive);
+            check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startScan(ScanStyle.WECHAT, ScanCodeActivity.class);
+                    if (code.equals("87489014")) {
+                        Toast.makeText(RealMyScanActivity.this, "签收成功！", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(RealMyScanActivity.this, "您没有权限签收！", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
         }
     }
 

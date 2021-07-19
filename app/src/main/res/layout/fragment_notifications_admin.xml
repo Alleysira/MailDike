@@ -63,7 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="小马"
+                        android:text="小堤"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -160,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="北京南法信中转场"
+                        android:text="青岛快递转运中心"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
                 </LinearLayout>
@@ -172,8 +172,6 @@
             </LinearLayout>
         </LinearLayout>
 
-
-
         <ImageView
             android:layout_marginTop="-430dp"
             android:id="@+id/protrit"
@@ -182,5 +180,6 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:src="@drawable/portrait"></ImageView>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
